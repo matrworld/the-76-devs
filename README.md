@@ -23,7 +23,11 @@ To start the dev server for the 76 website app, run `pnpm dev --filter website` 
 ### The 76 Website
 📂 `./apps/website`
 
-#### Setup Environment
+#### Setup
+##### Environment
   1. Create a new `.env` file at `./apps/website/.env`.
   2. Copy the contents from `./apps/website/.env.example` into your new `.env` file.
   3. Fill in any empty variables as needed.
+
+#### Start Dev
+Once setup, start the dev server by running either the `pnpm website` alias or running `pnpm dev --filter website` directly.
