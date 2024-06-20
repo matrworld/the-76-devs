@@ -1,0 +1,17 @@
+{
+    "name": "data",
+    "description": "description",
+    "authors": "author",
+    "version": "1.0.0",
+    "main": "src/index.ts",
+    "type": "module",
+    "exports": {
+        "./devnet-directory": "./src/devnet-directory/index.ts"
+    },
+    "dependencies": {
+        "types": "workspace: *"
+    },
+    "devDependencies": {
+        "@types/node": "^20"
+    }
+}
