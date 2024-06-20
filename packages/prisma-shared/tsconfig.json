@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "./node_modules/prisma-shared/", 
+        "module": "CommonJS",
+        "target": "ESNext",
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "declaration": true
+    },
+    "files": [
+        "./index.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "/**/generated"
+    ]
+}

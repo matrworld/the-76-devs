@@ -1,0 +1,46 @@
+generator client {
+    provider = "prisma-client-js"
+    output   = "./node_modules/@prisma-shared"
+}
+
+datasource db {
+    provider     = "postgres"
+    url          = env("DATABASE_URL")
+}
+
+model User {
+    id             String          @id @default(cuid())
+    username       String          @unique
+    name           String?
+    bio            String?
+    sessions       Session[]
+    wallets        Wallet[]
+    media          Media[]
+    createdAt      DateTime        @default(now())
+}
+
+model Media {
+    id             String          @id @default(cuid())
+    name           String
+    data           String
+    createdAt      DateTime        @default(now())
+    userId         String
+    user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Wallet {
+    id             String          @id @default(cuid())
+    address        String
+    verified       Boolean         @default(false)
+    createdAt      DateTime        @default(now())
+    userId         String
+    user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Session {
+    id        String   @id @default(cuid())
+    userId    String
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    expiresAt DateTime
+}
+
