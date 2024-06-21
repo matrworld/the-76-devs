@@ -8,8 +8,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "website": "pnpm dev --filter website",
     "directory": "pnpm dev --filter devnet-directory",
+    "start:directory": "node apps/devnet-directory/build/index.js",
     "db:push": "cd packages/prisma-shared && npx prisma db push",
-    "db:browse": "cd packages/prisma-shared && npx prisma studio"
+    "db:browse": "cd packages/prisma-shared && npx prisma studio",
+    "docker:up": "docker-compose -p 76devs up -d",
+		"docker:down": "docker-compose -p 76devs down --remove-orphans --volumes"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

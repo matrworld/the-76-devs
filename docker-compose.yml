@@ -5,13 +5,13 @@ networks:
     driver: bridge
 
 services:
-  postgres:
+  directory-postgres:
     image: postgres
-    container_name: postgres-database
+    container_name: directory-postgres
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=mysecretpassword
-      - POSTGRES_DB=codec
+      - POSTGRES_DB=directory
     networks:
       - dev-bridge
     ports:

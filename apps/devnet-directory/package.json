@@ -11,8 +11,6 @@
 		"format-directory": "tsx src/scripts/format.ts",
 		"db:fake": "tsx db/test/generate-fake.ts",
 		"db:push": "prisma db push",
-		"docker:up": "docker-compose -p codec up -d",
-		"docker:down": "docker-compose -p codec down --remove-orphans --volumes",
 		"start": "node build/index.js",
 		"preview": "vite preview",
 		"test": "playwright test",
