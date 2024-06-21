@@ -1,10 +1,10 @@
 import { TimeSpan } from 'lucia';
 
-import {
+const {
   GOOGLE_OAUTH_CLIENT_ID,
   GOOGLE_OAUTH_CLIENT_SECRET,
   GOOGLE_OAUTH_REDIRECT_URI
-} from "$env/static/private";
+} = process?.env;
 
 export const GOOGLE_CLIENT_ID = GOOGLE_OAUTH_CLIENT_ID || '';
 export const GOOGLE_CLIENT_SECRET = GOOGLE_OAUTH_CLIENT_SECRET || '';
