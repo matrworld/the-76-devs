@@ -3,17 +3,18 @@
 	"version": "0.0.1",
 	"private": true,
 	"engines": {
-		"node": ">=20"
+		"node": ">=20",
+		"pnpm": ">=9"
 	},
 	"scripts": {
-		"start:dev": "vite dev --port 5176",
+		"start:dev": "dotenv -- vite dev --port 5176",
 		"dev": "pnpm run start:dev",
-		"build": "vite build",
+		"build": "dotenv -- vite build",
 		"download": "tsx src/scripts/download.ts",
 		"format-directory": "tsx src/scripts/format.ts",
 		"db:fake": "tsx db/test/generate-fake.ts",
 		"db:push": "prisma db push",
-		"start": "node build/index.js",
+		"start": "dotenv -- node ./build/index.js",
 		"preview": "vite preview",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -33,6 +34,7 @@
 		"@typescript-eslint/parser": "^7.0.0",
 		"autoprefixer": "^10.4.19",
 		"daisyui": "^4.10.2",
+		"dotenv-cli": "^7.4.2",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0-next.4",

@@ -1,6 +1,10 @@
 {
   "name": "repo",
   "private": true,
+  "engines": {
+		"node": ">=20",
+		"pnpm": ">=9"
+	},
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -19,8 +23,5 @@
     "turbo": "^2.0.4",
     "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@8.15.6",
-  "engines": {
-    "node": ">=18"
-  }
+  "packageManager": "pnpm@8.15.6"
 }
