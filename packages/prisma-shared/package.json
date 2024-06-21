@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "./node_modules/prisma-shared/",
     "scripts": {
-        "db:push": "prisma db push",
-        "db:generate": "prisma generate",
+        "db:push": "npx prisma db push",
+        "db:generate": "npx prisma generate",
         "build": "pnpm run db:generate && tsc -p tsconfig.json"
     },
     "devDependencies": {
