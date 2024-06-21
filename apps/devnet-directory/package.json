@@ -2,6 +2,9 @@
 	"name": "devnet-directory",
 	"version": "0.0.1",
 	"private": true,
+	"engines": {
+		"node": ">=20"
+	},
 	"scripts": {
 		"start:dev": "vite dev --port 5176",
 		"dev": "pnpm run start:dev",
