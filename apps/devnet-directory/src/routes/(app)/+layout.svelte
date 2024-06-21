@@ -1,6 +1,4 @@
 <script lang="ts">
-    import '$lib/styles/app.postcss';
-
     import { DirectoryTable } from '$lib/components/directory';
 	import { onMount } from 'svelte';
 

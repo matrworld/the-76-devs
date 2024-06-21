@@ -18,10 +18,10 @@ export const SESSION_COOKIE = {
   secure: true, // set to false in localhost
   path: '/',
   httpOnly: true,
-  maxAge: 60 * 10 // 10 min
+  maxAge: ((60 * 1) * 60) * 48 // 48 hours
 };
 
-const appName = "codec";
+const appName = "76_directory";
 export const SESSION_COOKIE_NAME = appName + "_session";
 export const SESSION_VERIFIER_COOKIE_NAME = appName + '_code_verifier';
 export const SESSION_STATE_COOKIE_NAME = appName + '_state';

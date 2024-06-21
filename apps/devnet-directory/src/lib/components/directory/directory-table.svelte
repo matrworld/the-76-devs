@@ -97,7 +97,7 @@
             <Table.Body>
                 {#each sliced as {name, avatar, wallet, badges} (wallet)}
                     <Table.Row
-                        class="cursor-pointer items-center id-{wallet} {selected === wallet ? "bg-blue-100" : ""}"
+                        class="cursor-pointer id-{wallet} {selected === wallet ? "bg-blue-100" : ""}"
                         on:click={() => goto(`/u/${wallet}`)}
                     >
                         <Table.Cell>
@@ -122,7 +122,7 @@
                 {#if end >= users.length - 1 || isIncompleteUser}
                     {#each incomplete as { wallet, badges, devlist }}
                         <Table.Row
-                            class="flex items-center id-{wallet} {selected === wallet ? "bg-blue-100" : ""}"
+                            class=" id-{wallet} {selected === wallet ? "bg-blue-100" : ""}"
                             on:click={() => wallet ? goto(`/u/${wallet}`) : null}
                         >
                             <Table.Cell>

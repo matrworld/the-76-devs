@@ -46,7 +46,7 @@
                 <div class="flex flex-col w-full gap-3 my-3">
                     <a
                         href="https://solana.fm/address/{user?.wallet}/transactions"
-                        class="bg-gray-100 hover:bg-gray-300 rounded-lg p-3 flex items-center gap-3 w-full"
+                        class="bg-gray-100 hover:bg-gray-300 rounded-lg p-3 flex items-center gap-3 w-full outline-none"
                         target="_blank"
                     >
                         <div class="w-5 flex justify-center">
