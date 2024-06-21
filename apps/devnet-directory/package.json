@@ -3,8 +3,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"engines": {
-		"node": ">=20",
-		"pnpm": ">=9"
+		"node": ">=18",
+		"pnpm": ">=8"
 	},
 	"scripts": {
 		"start:dev": "dotenv -- vite dev --port 5176",
