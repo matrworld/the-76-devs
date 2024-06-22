@@ -2,6 +2,7 @@
 	"name": "devnet-directory",
 	"version": "0.0.1",
 	"private": true,
+	  "packageManager": "pnpm@8.15.6",
 	"engines": {
 		"node": ">=18",
 		"pnpm": ">=8"
@@ -12,6 +13,7 @@
 		"build": "dotenv -- vite build",
 		"download": "tsx src/scripts/download.ts",
 		"format-directory": "tsx src/scripts/format.ts",
+		"docker:build": "docker build -t devnet-directory .",
 		"db:fake": "tsx db/test/generate-fake.ts",
 		"db:push": "prisma db push",
 		"start": "dotenv -- node ./build/index.js",
