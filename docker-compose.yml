@@ -18,3 +18,5 @@ services:
       - '5488:5432'
     command: -c listen_addresses=0.0.0.0
     restart: unless-stopped
+
+    
