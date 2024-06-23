@@ -34,7 +34,7 @@ COPY --from=pruner /app/out/full .
 # Copy .env for sveltekit to pickup
 COPY --from=env /app/.env ./apps/devnet-directory/.env
 # Install
-RUN --mount=type=cache,id=s/370985b8-9fc8-495b-a3ed-352a36eb803d-/root/.local/share/pnpm/store/v3,target=/root/.local/share/pnpm/store/v3  pnpm i
+RUN pnpm i
 # Build
 RUN turbo build --filter devnet-directory
 
