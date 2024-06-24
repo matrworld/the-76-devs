@@ -9,20 +9,21 @@ RUN pnpm config set store-dir /root/.local/share/pnpm/store/v3
 
 # clean/prepare/prune only the required apps/packages 
 FROM base as pruner
+WORKDIR /pruned
 COPY . .
 RUN rm -rf /**/*/node_modules
-# Add default .env fie from .env.example
-RUN cp /apps/${APP_NAME}/.env.example /apps/${APP_NAME}/.env
+# Add default .env file from .env.example
+RUN cp /pruned/apps/${APP_NAME}/.env.example /pruned/apps/${APP_NAME}/.env
 RUN turbo prune ${APP_NAME} --docker
 
 # Install & build
 FROM base as builder
 WORKDIR /build
-COPY --from=pruner /out/json .
-COPY --from=pruner /out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=pruner /out/pnpm-workspace.yaml ./pnpm-workspace.yaml
+COPY --from=pruner /pruned/out/json .
+COPY --from=pruner /pruned/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=pruner /pruned/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 RUN pnpm i
-COPY --from=pruner /out/full .
+COPY --from=pruner /pruned/out/full .
 RUN pnpm run build --filter ${APP_NAME}
 
 # Runner (don't run as root user)
@@ -31,4 +32,5 @@ COPY --from=builder --chown=runnergroup:runer /build .
 RUN addgroup --system --gid 1001 runnergroup
 RUN adduser --system --uid 1001 runner
 USER runner
-CMD  pnpm start:${APP_NAME}
+WORKDIR /apps/${APP_NAME}
+CMD pnpm start

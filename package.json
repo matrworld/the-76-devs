@@ -13,7 +13,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "website": "pnpm dev --filter website",
     "directory": "pnpm dev --filter devnet-directory",
-    "start:directory": "node ./apps/devnet-directory/build/index.js",
+    "start:directory": "cd apps/devnet-directory && pnpm start",
     "start:website": "cd apps/website && pnpm start",
     "docker:build:directory": "docker build -t devnet-directory ./ --build-arg APP_NAME=devnet-directory",
     "docker:build:website": "docker build -t website ./ --build-arg APP_NAME=website",
