@@ -1,10 +1,9 @@
 // Exports types and things
 import { PrismaClient, Prisma } from "prisma-shared";
 
-const {
-    DATABASE_URL
-} = process.env;
-
+import {
+    DATABASE_URL,
+} from "$env/static/private";
 
 const prisma = new PrismaClient({
     datasources: {
