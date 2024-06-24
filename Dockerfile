@@ -31,4 +31,4 @@ COPY --from=builder --chown=runnergroup:runer /build .
 RUN addgroup --system --gid 1001 runnergroup
 RUN adduser --system --uid 1001 runner
 USER runner
-CMD node /apps/${APP_NAME}/build/index.js
+CMD  pnpm start:${APP_NAME}
