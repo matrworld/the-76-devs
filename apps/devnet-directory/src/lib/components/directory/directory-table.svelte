@@ -76,8 +76,6 @@
         loadMore();
     }
 
-    $: console.log({sliced, end})
-
     onMount(() => {
         $directory.rerender = rerender;
 

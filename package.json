@@ -15,6 +15,7 @@
     "directory": "pnpm dev --filter devnet-directory",
     "start:directory": "cd apps/devnet-directory && pnpm start",
     "start:website": "cd apps/website && pnpm start",
+    "docker:build:blink": "docker build -t blink-app ./ --build-arg APP_NAME=blink",
     "docker:build:directory": "docker build -t devnet-directory ./ --build-arg APP_NAME=devnet-directory",
     "docker:build:website": "docker build -t website ./ --build-arg APP_NAME=website",
     "docker:up:directory": "cd apps/devnet-directory && docker-compose -p devnet-directory up -d",

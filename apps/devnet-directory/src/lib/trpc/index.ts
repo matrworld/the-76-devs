@@ -1,5 +1,5 @@
 import { createTRPCSvelte,  httpBatchLink } from 'trpc-svelte-query';
-import { router, type Router } from '$lib/trpc/router/';
+import { router, type Router } from '$lib/server/router/';
 import type { RequestEvent } from '@sveltejs/kit';
 import { createTRPCSvelteServer } from 'trpc-svelte-query/server';
 

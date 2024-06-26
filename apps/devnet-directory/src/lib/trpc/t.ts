@@ -22,12 +22,6 @@ const authMiddleware = middleware(async ({ next, ctx }) => {
 });
 
 const privateProcedure = t.procedure.use(authMiddleware);
-
-// const myProcedure = t.procedure.input(z.object({
-// 	id: z.string(),
-// }))
-// .query(async ({ input }) => {
-// 	const user = await prisma.user.findFirst({
 	  
 export {
 	privateProcedure,

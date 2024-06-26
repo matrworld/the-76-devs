@@ -1,9 +1,7 @@
 # Setup base deps
-FROM node:20-alpine AS base
+FROM node:20-slim AS base
 ARG APP_NAME
 ENV APP_NAME=${APP_NAME}
-RUN apk update
-RUN apk add --no-cache libc6-compat g++ make py3-pip
 RUN npm install pnpm turbo --global --no-cache
 RUN pnpm config set store-dir /root/.local/share/pnpm/store/v3
 

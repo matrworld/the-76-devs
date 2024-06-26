@@ -1,5 +1,5 @@
 // lib/trpc/router.ts
-import { userRouter } from "$lib/trpc/router/user";
+import { userRouter } from "$lib/server/router/user";
 import { t } from '$lib/trpc/t';
 import type { inferRouterOutputs } from '@trpc/server';
 
