@@ -1,5 +1,3 @@
 packages:
   - "apps/*"
   - "packages/*"
-  - "apps/examples/showntells/*"
-  - "apps/examples/solana-wallet-adapter/*"
