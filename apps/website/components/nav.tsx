@@ -5,7 +5,7 @@ export function Nav() {
         <nav className="border">
             <div className="mx-auto p-3 max-w-6xl flex justify-between items-center">
                 <h2>The 76 Devs</h2>
-                <p>brb</p>
+                <a href="https://discord.gg/Tk5xjNjbeU">Join Discord</a>
             </div>
         </nav>
     )
