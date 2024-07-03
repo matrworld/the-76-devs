@@ -69,6 +69,15 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      embla-carousel-autoplay:
+        specifier: ^8.1.5
+        version: 8.1.5(embla-carousel@8.1.5)
+      embla-carousel-react:
+        specifier: ^8.1.5
+        version: 8.1.5(react@19.0.0-rc-f994737d14-20240522)
+      lottie-react:
+        specifier: ^2.4.0
+        version: 2.4.0(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
       lucide-react:
         specifier: ^0.395.0
         version: 0.395.0(react@19.0.0-rc-f994737d14-20240522)
@@ -1664,6 +1673,24 @@ packages:
   electron-to-chromium@1.4.803:
     resolution: {integrity: sha512-61H9mLzGOCLLVsnLiRzCbc63uldP0AniRYPV3hbGVtONA1pI7qSGILdbofR7A8TMbOypDocEAjH/e+9k1QIe3g==}
 
+  embla-carousel-autoplay@8.1.5:
+    resolution: {integrity: sha512-9pHIezRqiO9yism7wRFwmM1j/W9c9hBNX4hq3F4aTPbK84M0M57ryG8QUwhbsTGJbDoBBVTm//YEd0T6i/5YgA==}
+    peerDependencies:
+      embla-carousel: 8.1.5
+
+  embla-carousel-react@8.1.5:
+    resolution: {integrity: sha512-xFmfxgJd7mpWDHQ4iyK1Qs+5BTTwu4bkn+mSROKiUH9nKpPHTeilQ+rpeQDCHRrAPeshD67aBk0/p6FxWxXsng==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
+
+  embla-carousel-reactive-utils@8.1.5:
+    resolution: {integrity: sha512-76uZTrSaEGGta+qpiGkMFlLK0I7N04TdjZ2obrBhyggYIFDWlxk1CriIEmt2lisLNsa1IYXM85kr863JoCMSyg==}
+    peerDependencies:
+      embla-carousel: 8.1.5
+
+  embla-carousel@8.1.5:
+    resolution: {integrity: sha512-R6xTf7cNdR2UTNM6/yUPZlJFRmZSogMiRjJ5vXHO65II5MoUlrVYUAP0fHQei/py82Vf15lj+WI+QdhnzBxA2g==}
+
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
 
@@ -2379,6 +2406,15 @@ packages:
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
+
+  lottie-react@2.4.0:
+    resolution: {integrity: sha512-pDJGj+AQlnlyHvOHFK7vLdsDcvbuqvwPZdMlJ360wrzGFurXeKPr8SiRCjLf3LrNYKANQtSsh5dz9UYQHuqx4w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  lottie-web@5.12.2:
+    resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==}
 
   lru-cache@10.2.0:
     resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
@@ -4908,6 +4944,22 @@ snapshots:
 
   electron-to-chromium@1.4.803: {}
 
+  embla-carousel-autoplay@8.1.5(embla-carousel@8.1.5):
+    dependencies:
+      embla-carousel: 8.1.5
+
+  embla-carousel-react@8.1.5(react@19.0.0-rc-f994737d14-20240522):
+    dependencies:
+      embla-carousel: 8.1.5
+      embla-carousel-reactive-utils: 8.1.5(embla-carousel@8.1.5)
+      react: 19.0.0-rc-f994737d14-20240522
+
+  embla-carousel-reactive-utils@8.1.5(embla-carousel@8.1.5):
+    dependencies:
+      embla-carousel: 8.1.5
+
+  embla-carousel@8.1.5: {}
+
   emoji-regex@8.0.0: {}
 
   emoji-regex@9.2.2: {}
@@ -5829,6 +5881,14 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
+
+  lottie-react@2.4.0(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522):
+    dependencies:
+      lottie-web: 5.12.2
+      react: 19.0.0-rc-f994737d14-20240522
+      react-dom: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
+
+  lottie-web@5.12.2: {}
 
   lru-cache@10.2.0: {}
 

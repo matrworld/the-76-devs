@@ -1,20 +1,18 @@
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+"use client"
+import Community from "@/components/sections/Community";
+import DevnetDir from "@/components/sections/DevnetDir";
+import Header from "@/components/sections/Header";
+import JoinUs from "@/components/sections/JoinUs";
+import Lottie from "lottie-react";
+
 
 export default function Home() {
   return (
-    <div>
-      <div>Hello World</div>
-      <Button>Example Shadcn Button</Button>
-      <div className="flex items-center space-x-2">
-        <Checkbox id="terms" />
-        <label
-          htmlFor="terms"
-          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
-          Example checkbox
-        </label>
-      </div>
+    <div className="">
+      <Header />
+      <JoinUs />
+      {/* <DevnetDir /> */}
+      <Community />
     </div>
   );
 }

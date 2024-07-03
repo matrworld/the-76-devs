@@ -16,6 +16,9 @@ const config: Config = {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
       },
+      boxShadow: {
+        "bottom-right": "6px 6px 0px rgba(0, 0, 0, 1)",
+      }
     },
   },
   plugins: [],
