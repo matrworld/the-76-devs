@@ -262,6 +262,15 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      embla-carousel-autoplay:
+        specifier: ^8.1.5
+        version: 8.1.5(embla-carousel@8.1.5)
+      embla-carousel-react:
+        specifier: ^8.1.5
+        version: 8.1.5(react@19.0.0-rc-f994737d14-20240522)
+      lottie-react:
+        specifier: ^2.4.0
+        version: 2.4.0(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
       lucide-react:
         specifier: ^0.395.0
         version: 0.395.0(react@19.0.0-rc-f994737d14-20240522)

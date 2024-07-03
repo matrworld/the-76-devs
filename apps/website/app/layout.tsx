@@ -3,6 +3,12 @@ import "./globals.css";
 
 import { Nav } from "@/components/nav";
 import { Providers } from "@/components/providers"
+import localFont from 'next/font/local'
+
+const myFont = localFont({
+  src: './fonts/GeistMonoVF.woff',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "The 76 Devs",
@@ -15,12 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={myFont.className}>
         <body>
           <Providers>
             <Nav />
-
-            <main className="max-w-5xl mx-auto p-3">
+            <main className="max-w- mx-auto p-">
               {children}        
             </main>
           </Providers>
