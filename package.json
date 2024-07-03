@@ -1,20 +1,35 @@
 {
   "name": "repo",
   "private": true,
+  "engines": {
+   	"node": ">=18",
+		"pnpm": ">=8"
+  },
   "scripts": {
+    "prune": "turbo prune",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "website": "pnpm dev --filter website"
+    "website": "pnpm dev --filter website",
+    "directory": "pnpm dev --filter devnet-directory",
+    "start:directory": "cd apps/devnet-directory && pnpm start",
+    "start:website": "cd apps/website && pnpm start",
+    "docker:build:directory": "docker build -t devnet-directory ./ --build-arg APP_NAME=devnet-directory",
+    "docker:build:website": "docker build -t website ./ --build-arg APP_NAME=website",
+    "docker:up:directory": "cd apps/devnet-directory && docker-compose -p devnet-directory up -d",
+    "docker:down:directory": "docker-compose -p devnet-directory down --remove-orphans --volumes",
+    "env:directory": "dotenv -- node scripts/write-env.js devnet-directory",
+    "db:push": "cd packages/prisma-shared && npx prisma db push",
+    "db:browse": "cd packages/prisma-shared && npx prisma studio",
+    "docker:up": "docker-compose -p 76devs up -d",
+    "docker:down": "docker-compose -p 76devs down --remove-orphans --volumes"
   },
   "devDependencies": {
+    "dotenv-cli": "^7.4.2",
     "prettier": "^3.2.5",
     "turbo": "^2.0.4",
     "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@8.15.6",
-  "engines": {
-    "node": ">=18"
-  }
+  "packageManager": "pnpm@8.15.6"
 }

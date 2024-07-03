@@ -1,0 +1,20 @@
+version: '3.8'
+
+networks:
+  dev-bridge:
+    driver: bridge
+
+services:
+  devnet-directory:
+    image: devnet-directory
+    container_name: devnet-directory
+    env_file:
+      - .env
+    build:
+      args:
+        - APP_NAME=devnet-directory
+    networks:
+      - dev-bridge
+    ports:
+      - '3001:3000'
+    restart: unless-stopped

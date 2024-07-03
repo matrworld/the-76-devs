@@ -1,0 +1,22 @@
+version: '3.8'
+
+networks:
+  dev-bridge:
+    driver: bridge
+
+services:
+  directory-postgres:
+    image: postgres
+    container_name: directory-postgres
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=directory
+    networks:
+      - dev-bridge
+    ports:
+      - '5488:5432'
+    command: -c listen_addresses=0.0.0.0
+    restart: unless-stopped
+
+    
