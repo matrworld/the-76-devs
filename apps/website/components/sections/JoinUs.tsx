@@ -5,23 +5,44 @@ import Conatiner from "../layout/Conatiner";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { discord } from "@/lib/config/discord";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "../ui/button";
 
-export default function JoinUs() {
+interface JoinUsProps extends React.HTMLAttributes<HTMLElement> {
+  className?: string;
+  title?: string;
+  desc?: string;
+}
+
+export default function JoinUs({ className, title, desc }: JoinUsProps) {
   return (
-    <Conatiner>
-      <HeaderText title="Join Our Community" />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 px-2">
-        {discord.map((user) => (
-          <div className="shadow-bottom-right p-4">
-          <div className="flex items-center justify-center gap-2">
-            <Image src={user.img} alt="" width={100} height={100} className="rounded-full p-4"/>
-            <div>
-              <p className="font-semibold">{user.name}</p>
-              <Badge>{user.status}</Badge>
-            </div>
+    <Conatiner className="py-10">
+      <div className={cn("flex justify-between px-20 gap-32", className)}>
+        <div className="flex justify-center flex-1">
+          <div className="relative w-full h-full px-10">
+            <Image src={"/images/background/bg.jpg"} alt="" fill />
           </div>
         </div>
-        ))}
+        <div className="flex justify-center flex-1">
+          <div className="flex flex-col justify-center items-start gap-5">
+            <h1 className="text-4xl font-bold">{title}</h1>
+            <h2 className="text-2xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis dolorum accusantium magni impedit vero corrupti cum
+              harum amet eum. Cupiditate.
+            </h2>
+            <Link
+              href={"/"}
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "self-start shadow-bottom-right border-"
+              )}
+            >
+              Join Discord
+            </Link>
+          </div>
+        </div>
       </div>
     </Conatiner>
   );

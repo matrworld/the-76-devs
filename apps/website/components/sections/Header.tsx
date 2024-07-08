@@ -12,17 +12,19 @@ import Slider from "../layout/Slider";
 export default function Header() {
   return (
     <div
-      className="relative flex flex-col gap-10 items-center justify-center h-[90vh] w-full mb-32"
+      className="relative flex flex-col gap-10 items-center justify-center h-[80vh] w-full mb-32"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <Image src={'/images/background/bg.jpg'} alt="" fill className="opacity-10"/>
-      {/* <div className="flex justify- w-full"> */}
-        {/* <Slider /> */}
-        <div className="flex flex-col gap-2 justify-center py-8 px-4 max-w-sm h-fit w-full shadow-bottom-right">
-          <h1 className="font-light">The</h1>
-          <h2 className="text-[10rem] font-extrabold text-center">76</h2>
-          <h3 className="text-3xl font-extrabold text-right">Devs</h3>
-        {/* </div> */}
+      <Image
+        src={"/images/background/bg.jpg"}
+        alt=""
+        fill
+        className="opacity-10"
+      />
+      <div className="flex flex-col gap-2 justify-center py-8 px-4 max-w-sm h-fit w-full shadow-bottom-right">
+        <h1 className="font-light">The</h1>
+        <h2 className="text-[10rem] font-extrabold text-center">76</h2>
+        <h3 className="text-3xl font-extrabold text-right">Devs</h3>
         {/* <Slider /> */}
       </div>
       <Link
